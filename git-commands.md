@@ -2,8 +2,8 @@
 
 ### Configurações globais na primeira utilização do comando git:
 
-    git config --global user.name "Vitor Monteiro"
-    git config --global user.email "vitor.monteiro@tce.pa.gov.br"
+    git config --global user.name "Fulano de Tal"
+    git config --global user.email "fulano.de.tal@domain.com"
 
 ### Desabilita a checagem de certificado no projeto
 
