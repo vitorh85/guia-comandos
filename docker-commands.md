@@ -1,28 +1,30 @@
 # Docker Commands
 
+] Fonte: https://www.youtube.com/watch?v=3c-iBn73dDE&ab_channel=TechWorldwithNana
+
 ### Container and image
 
-    Ex: <image_name> = redis
-    Ex: <container_ID> = d7a6ef66e6da
-    Ex: <container_name> = heuristic_raman
+    Ex: [IMAGE_NAME] = redis
+    Ex: [CONTAINER_ID] = d7a6ef66e6da
+    Ex: [CONTAINER_NAME] = heuristic_raman
 
 ### Pull image from cloud repository
 
-    docker pull <image_name>
-    docker pull <image_name>:<image_version>
+    docker pull [IMAGE_NAME]
+    docker pull [IMAGE_NAME]:[IMAGE_VERSION]
 
 ### Run image (creating a new container)
 
-    docker run <image_name>
-    docker run <image_name>:<image_version>
+    docker run [IMAGE_NAME]
+    docker run [IMAGE_NAME]:[IMAGE_VERSION]
 
 ### Run image in detached mode (background - terminal session does not get locked)
 
-    docker run -d <image_name>
+    docker run -d [IMAGE_NAME]
 
 ### Run image with a customized name
 
-    docker run <image_name> --name <any_name>
+    docker run [IMAGE_NAME] --name [NEW_NAME]
 
 ### List running containers
 
@@ -38,32 +40,32 @@
 
 ### Removes an image
 
-    docker rmi <image_ID/name>
+    docker rmi [IMAGE_ID/NAME]
 
 ### Stops a running container
 
-    docker stop <container_ID/name>
+    docker stop [CONTAINER_ID/NAME]
 
 ### Starts a previously created container
 
-    docker start <container_ID/name>
+    docker start [CONTAINER_ID/NAME]
 
 ### Removes a container
 
-    docker rm <container_ID/name>
+    docker rm [CONTAINER_ID/NAME]
 
 ### Port binding between host and container
 
-    docker run -p <host_port>:<container_port> <image_name>
+    docker run -p [host_port]:[container_port] [IMAGE_NAME]
 
 ### Show logs of a container
 
-    docker logs <container_ID/name>
+    docker logs [CONTAINER_ID/NAME]
 
 ### Access interactive terminal of a container
 
-    docker exec -it <container_ID/name> <shell>
-    <shell> = /bin/bash or /bin/sh
+    docker exec -it [CONTAINER_ID/NAME] [SHELL]
+    [SHELL] = /bin/bash or /bin/sh
 
 ### Check status of running containers
 
@@ -71,9 +73,9 @@
 
 ### Copy files to and from a container
 
-    docker cp <src> <dest>
-    docker cp <host_dir_or_file> <container_ID/name>:<container_dir>
-    docker cp <container_ID/name>:<container_dir_or_file> <host_dir>
+    docker cp [SOURCE] [DESTINATION]
+    docker cp [HOST_DIR_OR_FILE] [CONTAINER_ID/NAME]:[CONTAINER_DIR]
+    docker cp [CONTAINER_ID/NAME]:[CONTAINER_DIR_OR_FILE] [HOST_DIR]
 
 ### List docker networks
 
@@ -89,16 +91,16 @@
 
 ### Inspect container/images
 
-    docker inspect $container_ID
-    docker inspect $image_ID
+    docker inspect [CONTAINER_ID]
+    docker inspect [IMAGE_ID]
 
 ### Get an instance’s IP address
 
-    docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $INSTANCE_ID
+    docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [CONTAINER_ID]
 
 ### Get an instance’s MAC address
 
-    docker inspect --format='{{range.NetworkSettings.Networks}}{{.MacAddress}}{{end}}' $INSTANCE_ID
+    docker inspect --format='{{range.NetworkSettings.Networks}}{{.MacAddress}}{{end}}' [CONTAINER_ID]
 
 ### Start mongodb
 
@@ -127,7 +129,7 @@ Obs: Check docker compose file of this command (mongo-docker-compose.yaml).
 
 ### Mounting volumes for data persistence on Databases
 
-    docker run -v <host_dir>:<container_dir>
+    docker run -v [HOST_DIR]:[CONTAINER_DIR]
 
 ### Docker volume locations (named volumes) on Host (.yaml)
 
@@ -154,7 +156,7 @@ Obs: On docker compose file there is no need to specify network because it creat
 
 ### Builds an image from a Dockerfile located at the current directory (.)
 
-    docker build -t <new_image_name>:<new_image_version> .
+    docker build -t [NEW_IMAGE_NAME]:[NEW_IMAGE_VERSION] .
 
 ### Login on a private Docker Registry (repository) to upload the customized image (you will be prompted for credentials)
 
@@ -168,20 +170,20 @@ Obs: On docker compose file there is no need to specify network because it creat
 
 ### Copy an image with another name, the image ID remains the same
 
-    docker tag <image_name>:<image_version> <repository_domain>/<new_image_name>:<new_image_version>
+    docker tag [IMAGE_NAME]:[IMAGE_VERSION] [REPOSITORY_DOMAIN]/[NEW_IMAGE_NAME]:[NEW_IMAGE_VERSION]
     docker tag my-app:1.0 5468256.eu-central-1.amazonaws.com/my-app:1.0
 
 ### Push an image to the provided repository (Docker Registry)
 
     docker push 5468256.eu-central-1.amazonaws.com/my-app:1.0
 
-### Exemplo de comando em um app
+### Comando usado pelo Patrick
 
-    docker run --rm -ti -v "/mnt/c/Users/fulano/Drive/Projetos/extracao":/root -p 8000:8501 --entrypoint /bin/bash extracao
+    docker run --rm -ti -v "/mnt/c/Users/0101119/Google Drive/TCE/Projetos/extracao-doe":/root -p 8000:8501 --entrypoint /bin/bash extracao-doe
 
 ### Grants permission to docker commands to a specific linux user
 
-    $ usermod -aG docker <username>
+    $ usermod -aG docker [USERNAME]
 
 ### Removes all containers
 

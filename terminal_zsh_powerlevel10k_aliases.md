@@ -27,13 +27,13 @@ Fonte: https://github.com/romkatv/powerlevel10k
 1. Clone the repository:
 ```sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-``` 
+```
 2. Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`. 
 3. Start a new terminal session and configure the layout:
 ```
 Options:
 2 1 4  2 1 1  5 2 2  1 2 2 y 1
-``` 
+```
 
 ## Instalar Zsh Autosuggestions
 

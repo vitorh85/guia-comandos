@@ -1,22 +1,22 @@
 # Python, Jupyter e VSCode
 
-### 1. Instalar as extensões no VSCode:
+## 1. Instalar as extensões no VSCode:
 
 * Python
 * Jupyter
 * Pylance
 * Material Icon Theme
 
-### 2. Criar novo jupyter notebook no VSCode:
+## 2. Criar novo jupyter notebook no VSCode:
 
 	Ctrl + Shift + P
 	>Jupyter: Create New Blank Notebook
 
-### 3. Roda trechos do código em uma janela interativa do python (como se estivesse no jupyter notebook):
+## 3. Roda trechos do código em uma janela interativa do python (como se estivesse no jupyter notebook):
 
 	#%%
 
-### 4. Abre o Jupyter notebook (https://jupyter.org/install):
+## 4. Abre o Jupyter notebook (https://jupyter.org/install):
 
 	I. JupyterLab:
 	> pip install jupyterlab
@@ -26,7 +26,24 @@
 	> pip install notebook
 	> jupyter notebook
 
-### 5. Módulos populares do Python:
+## 5. Configurações do VSCode via JSON:
+
+```json
+{
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.compactFolders": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "python": "cls ; python -u",
+    },
+    "code-runner.ignoreSelection": true
+}
+```
+
+## 6. Módulos populares do Python:
 
 * __Requests__: python HTTP for humans
 	> pip install requests
