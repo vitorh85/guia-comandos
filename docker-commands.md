@@ -1,6 +1,6 @@
 # Docker Commands
 
-] Fonte: https://www.youtube.com/watch?v=3c-iBn73dDE&ab_channel=TechWorldwithNana
+Fonte: https://www.youtube.com/watch?v=3c-iBn73dDE&ab_channel=TechWorldwithNana
 
 ### Container and image
 
@@ -127,6 +127,14 @@ Obs: Check docker compose file of this command (mongo-docker-compose.yaml).
 
 Obs: Check docker compose file of this command (mongo-docker-compose.yaml).
 
+### Run a container with environment file
+
+    docker run -d --env-file ./.env [IMAGE_NAME]:[TAG]
+
+### Runa container with privileged permissions (Ex: Mount network share)
+
+    docker run -d --privileged [IMAGE_NAME]:[TAG]
+
 ### Mounting volumes for data persistence on Databases
 
     docker run -v [HOST_DIR]:[CONTAINER_DIR]
@@ -177,10 +185,6 @@ Obs: On docker compose file there is no need to specify network because it creat
 
     docker push 5468256.eu-central-1.amazonaws.com/my-app:1.0
 
-### Comando usado pelo Patrick
-
-    docker run --rm -ti -v "/mnt/c/Users/0101119/Google Drive/TCE/Projetos/extracao-doe":/root -p 8000:8501 --entrypoint /bin/bash extracao-doe
-
 ### Grants permission to docker commands to a specific linux user
 
     $ usermod -aG docker [USERNAME]
@@ -192,3 +196,14 @@ Obs: On docker compose file there is no need to specify network because it creat
 ### Removes all volumes
 
     $ docker volume rm $(docker volume ls)
+
+
+## Exemplos
+
+### Comando do projeto extracao-doe do Patrick
+
+    docker run --rm -ti -v "/mnt/c/Users/0101119/Google Drive/TCE/Projetos/extracao-doe":/root -p 8000:8501 --entrypoint /bin/bash extracao-doe
+
+### Comando do projeto docx2pdf
+
+    docker run -d --privileged --env-file ./.env docx2pdf:0.5

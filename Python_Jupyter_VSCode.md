@@ -3,8 +3,10 @@
 ## 1. Instalar as extensões no VSCode:
 
 * Python
-* Jupyter
 * Pylance
+* Remote Development
+* Jupyter
+* Code Runner
 * Material Icon Theme
 
 ## 2. Criar novo jupyter notebook no VSCode:
